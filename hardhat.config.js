@@ -1,27 +1,31 @@
 require("@nomiclabs/hardhat-waffle");
 
 const projectId = "1cab8083a5cb497eba24e43366944c9a"
+const fs = require('fs')
+const keyData = fs.readFileSync('./p-key.txt', {
+  encoding:'utf8', flag:'r'
+})
 
 module.exports = {
-  defaultNetwork: "hardhat",
-  networks: {
-    hardhat: {
-      chainId: 1337 // config standard
+  defaultNetwork: 'hardhat',
+  networks:{
+    hardhat:{
+      chainId: 1337 // config standard 
     },
-    mumbai: {
-      url: `https://polygon-mumbai.infura.io/v3/${projectId}`,
-      accounts: []
+    mumbai:{
+      url:`https://polygon-mumbai.infura.io/v3/${projectId}`,
+      accounts:[keyData]
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${projectId}`,
-      accounts: []
+      url:`https://mainnet.infura.io/v3/${projectId}`,
+      accounts:[keyData]
     }
   },
   solidity: {
     version: "0.8.4",
     settings: {
       optimizer: {
-        enabled: true, 
+        enabled: true,
         runs: 200
       }
     }
