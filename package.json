@@ -18,7 +18,9 @@
     "ethers": "^5.5.1",
     "hardhat": "^2.6.8",
     "ipfs-http-client": "^54.0.1",
+    "lts": "^1.2.0",
     "next": "12.0.1",
+    "node": "^17.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "web3modal": "^1.9.4"
